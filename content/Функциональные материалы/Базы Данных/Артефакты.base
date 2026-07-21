@@ -1,0 +1,21 @@
+properties:
+  file.name:
+    displayName: Название
+views:
+  - type: table
+    name: Таблица
+    filters:
+      and:
+        - exampleProperty == "Артефакт"
+        - '!file.inFolder("Функциональные материалы/Шаблоны")'
+    order:
+      - file.name
+      - Редкость
+    columnSize:
+      file.name: 457
+      note.Редкость: 184
+  - type: cards
+    name: Карточки
+    filters:
+      and:
+        - exampleProperty == "Артефакт"

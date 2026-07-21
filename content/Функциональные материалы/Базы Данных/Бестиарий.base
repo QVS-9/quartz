@@ -1,0 +1,39 @@
+formulas:
+  Untitled: ""
+properties:
+  file.tags:
+    displayName: "Цепи:"
+  note.imageProperty:
+    displayName: Зарисовка
+  note.exampleProperty:
+    displayName: Объект
+  file.name:
+    displayName: Название
+views:
+  - type: table
+    name: Таблица
+    filters:
+      and:
+        - exampleProperty == "Существо"
+        - file.tags.containsAll("*название цепей*")
+        - '!file.inFolder("Функциональные материалы/Шаблоны")'
+    order:
+      - file.name
+      - file.tags
+    sort:
+      - property: file.tags
+        direction: ASC
+  - type: cards
+    name: Карточки
+    filters:
+      and:
+        - exampleProperty == "Существо"
+        - file.tags.containsAll("*название цепей*")
+    order:
+      - file.name
+      - file.tags
+    sort: []
+    cardSize: 200
+    imageFit: contain
+    image: note.imageProperty
+    imageAspectRatio: 1
